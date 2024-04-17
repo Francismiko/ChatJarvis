@@ -9,6 +9,7 @@
 		"preview": "serve dist"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "latest",
 		"typescript": "latest",
 		"vite": "latest"
 	},
