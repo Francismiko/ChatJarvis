@@ -11,6 +11,7 @@
 	"devDependencies": {
 		"@biomejs/biome": "latest",
 		"typescript": "latest",
+		"unocss": "latest",
 		"vite": "latest"
 	},
 	"dependencies": {
