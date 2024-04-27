@@ -24,6 +24,9 @@ importers:
       '@biomejs/biome':
         specifier: latest
         version: 1.7.1
+      '@unocss/preset-uno':
+        specifier: ^0.59.4
+        version: 0.59.4
       typescript:
         specifier: latest
         version: 5.4.5
