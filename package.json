@@ -16,7 +16,7 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "latest",
-		"@unocss/preset-uno": "^0.59.4",
+		"@unocss/preset-uno": "latest",
 		"typescript": "latest",
 		"unocss": "latest",
 		"vite": "latest"

@@ -6,6 +6,7 @@ import {
 } from '@builder.io/qwik-city'
 import '@unocss/reset/normalize.css'
 import 'uno.css'
+import '@/styles/reset.css'
 
 export default component$(() => {
 	return (
