@@ -24,6 +24,7 @@
 	"dependencies": {
 		"@builder.io/qwik": "latest",
 		"@builder.io/qwik-city": "latest",
+		"@qwik-ui/headless": "latest",
 		"@unocss/reset": "latest",
 		"vite-tsconfig-paths": "latest"
 	}

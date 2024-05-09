@@ -13,7 +13,7 @@
 		"formatter": {
 			"semicolons": "asNeeded",
 			"quoteStyle": "single",
-			"jsxQuoteStyle": "single",
+			"jsxQuoteStyle": "double",
 			"arrowParentheses": "asNeeded"
 		}
 	}

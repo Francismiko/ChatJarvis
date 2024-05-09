@@ -12,7 +12,7 @@ export default component$(() => {
 	return (
 		<QwikCityProvider>
 			<head>
-				<meta charSet='utf-8' />
+				<meta charSet="utf-8" />
 				<ServiceWorkerRegister />
 			</head>
 			<body>

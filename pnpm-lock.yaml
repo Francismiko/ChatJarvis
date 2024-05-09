@@ -14,6 +14,9 @@ importers:
       '@builder.io/qwik-city':
         specifier: latest
         version: 1.5.2(rollup@4.14.3)
+      '@qwik-ui/headless':
+        specifier: latest
+        version: 0.3.8(@builder.io/qwik@1.5.2(undici@6.13.0))
       '@unocss/reset':
         specifier: latest
         version: 0.59.4
@@ -25,7 +28,7 @@ importers:
         specifier: latest
         version: 1.7.1
       '@unocss/preset-uno':
-        specifier: ^0.59.4
+        specifier: latest
         version: 0.59.4
       typescript:
         specifier: latest
@@ -573,6 +576,12 @@ packages:
 
   '@polka/url@1.0.0-next.25':
     resolution: {integrity: sha512-j7P6Rgr3mmtdkeDGTe0E/aYyWEWVtc5yFXtHCRHs28/jptDEWfaVOc5T7cblqy1XKPPfCxJc/8DwQ5YgLOZOVQ==}
+
+  '@qwik-ui/headless@0.3.8':
+    resolution: {integrity: sha512-kNr1W5QoT7itoxWMLSFrkA/M4cV9izYURHox+6pmH64zpXRuJJMjg7pvzhHW0ZAFSzEOJ5JhP4mPFWjMdRAMgQ==}
+    engines: {node: '>=16.0.0'}
+    peerDependencies:
+      '@builder.io/qwik': ^1.4.0
 
   '@rollup/pluginutils@5.1.0':
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
@@ -2153,6 +2162,10 @@ snapshots:
       fastq: 1.17.1
 
   '@polka/url@1.0.0-next.25': {}
+
+  '@qwik-ui/headless@0.3.8(@builder.io/qwik@1.5.2(undici@6.13.0))':
+    dependencies:
+      '@builder.io/qwik': 1.5.2(undici@6.13.0)
 
   '@rollup/pluginutils@5.1.0(rollup@4.14.3)':
     dependencies:
