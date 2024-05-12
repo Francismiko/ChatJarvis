@@ -29,8 +29,9 @@ export default component$(() => {
 
 	return (
 		<div class="flex flex-col w-full h-full">
+			<header class="h-[8vh]" />
 			<main class="flex-1 overflow-y-auto">
-				<div class="h-[200vh] mx-[15vw]">123</div>
+				<div class="h-[200vh] mx-[30vw] color-white">123</div>
 			</main>
 			<textarea
 				ref={textareaRef}
@@ -38,7 +39,7 @@ export default component$(() => {
 				onKeyDown$={handleKeydown}
 				rows={rows.value}
 				value={text.value}
-				class="block resize-none w-1/3 mx-auto max-h-[25vh] border"
+				class="block resize-none w-xl mx-auto max-h-[25vh] border"
 			/>
 			<footer>
 				<div class="h-[5vh]" />
