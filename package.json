@@ -26,6 +26,7 @@
 		"@builder.io/qwik-city": "latest",
 		"@qwik-ui/headless": "latest",
 		"@unocss/reset": "latest",
+		"radash": "latest",
 		"vite-tsconfig-paths": "latest"
 	}
 }

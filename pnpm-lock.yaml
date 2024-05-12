@@ -20,6 +20,9 @@ importers:
       '@unocss/reset':
         specifier: latest
         version: 0.59.4
+      radash:
+        specifier: ^12.1.0
+        version: 12.1.0
       vite-tsconfig-paths:
         specifier: latest
         version: 4.3.2(typescript@5.4.5)(vite@5.2.10)
@@ -1413,6 +1416,10 @@ packages:
 
   queue-microtask@1.2.3:
     resolution: {integrity: sha512-NuaNSa6flKT5JaSYQzJok04JzTL1CA6aGhv5rfLW3PgqA+M2ChpZQnAC8h8i4ZFkBS8X5RqkDBHA7r4hej3K9A==, tarball: https://r2.cnpmjs.org/queue-microtask/-/queue-microtask-1.2.3.tgz}
+
+  radash@12.1.0:
+    resolution: {integrity: sha512-b0Zcf09AhqKS83btmUeYBS8tFK7XL2e3RvLmZcm0sTdF1/UUlHSsjXdCcWNxe7yfmAlPve5ym0DmKGtTzP6kVQ==}
+    engines: {node: '>=14.18.0'}
 
   readdirp@3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==, tarball: https://r2.cnpmjs.org/readdirp/-/readdirp-3.6.0.tgz}
@@ -3238,6 +3245,8 @@ snapshots:
   property-information@6.5.0: {}
 
   queue-microtask@1.2.3: {}
+
+  radash@12.1.0: {}
 
   readdirp@3.6.0:
     dependencies:
