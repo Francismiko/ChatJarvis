@@ -1,7 +1,10 @@
-import { $, component$, useSignal } from '@builder.io/qwik'
-import { isEmpty, trim } from 'radash'
+import { $, component$, useSignal, useStore } from '@builder.io/qwik'
+import { isEmpty, trim, uid } from 'radash'
+import { ChatOllama } from '@langchain/community/chat_models/ollama'
+import { StringOutputParser } from '@langchain/core/output_parsers'
 
 export default component$(() => {
+	const messages = useStore<string[]>([])
 	const textareaRef = useSignal<HTMLTextAreaElement>()
 	const rows = useSignal<number>(1)
 	const text = useSignal<string>('')
@@ -12,7 +15,7 @@ export default component$(() => {
 		rows.value = text.value.split('\n').length
 	})
 
-	const handleKeydown = $((event: KeyboardEvent) => {
+	const handleKeydown = $(async (event: KeyboardEvent) => {
 		if (event.key === 'Enter') {
 			if (
 				isEmpty(trim(text.value, '\n ')) ||
@@ -22,8 +25,22 @@ export default component$(() => {
 				return
 			}
 			event.preventDefault()
+
+			const chatModel = new ChatOllama({
+				model: 'qwen:0.5b',
+				temperature: 1,
+			})
+			const outputParser = new StringOutputParser()
+			const chain = chatModel.pipe(outputParser)
+			const stream = chain.stream(text.value)
+
+			messages.push('')
 			text.value = ''
 			rows.value = 1
+
+			for await (const chunk of await stream) {
+				messages[messages.length - 1] += chunk
+			}
 		}
 	})
 
@@ -31,7 +48,13 @@ export default component$(() => {
 		<div class="flex flex-col w-full h-full">
 			<header class="h-[8vh]" />
 			<main class="flex-1 overflow-y-auto">
-				<div class="h-[200vh] mx-[30vw] color-white">123</div>
+				<div class="h-[200vh] mx-[30vw]">
+					{messages.map(msg => (
+						<p key={uid(8)} class="color-white">
+							{msg}
+						</p>
+					))}
+				</div>
 			</main>
 			<textarea
 				ref={textareaRef}

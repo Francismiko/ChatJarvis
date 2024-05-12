@@ -17,6 +17,9 @@ importers:
       '@langchain/community':
         specifier: ^0.0.56
         version: 0.0.56(openai@4.45.0)
+      '@langchain/core':
+        specifier: ^0.1.62
+        version: 0.1.62(openai@4.45.0)
       '@qwik-ui/headless':
         specifier: latest
         version: 0.3.8(@builder.io/qwik@1.5.2(@types/node@18.19.33)(undici@6.13.0))
