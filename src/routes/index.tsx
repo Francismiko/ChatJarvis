@@ -8,8 +8,8 @@ export default component$(() => {
 
 	const handleInput = $(() => {
 		if (!textareaRef.value) return
-		rows.value = textareaRef.value.value.split('\n').length
 		text.value = textareaRef.value.value
+		rows.value = text.value.split('\n').length
 	})
 
 	const handleKeydown = $((event: KeyboardEvent) => {
@@ -28,20 +28,21 @@ export default component$(() => {
 	})
 
 	return (
-		<div class="flex flex-col w-full max-h-full">
-			<div class="flex-1  overflow-y-auto">
+		<div class="flex flex-col w-full h-full">
+			<main class="flex-1 overflow-y-auto">
 				<div class="h-[200vh] mx-[15vw]">123</div>
-			</div>
-			<div class="min-h-[10vh] w-[100vw]">
-				<textarea
-					ref={textareaRef}
-					onInput$={handleInput}
-					onKeyDown$={handleKeydown}
-					rows={rows.value}
-					value={text.value}
-					class="block resize-none w-[50vw] mx-auto max-h-[25vh] h-auto border"
-				/>
-			</div>
+			</main>
+			<textarea
+				ref={textareaRef}
+				onInput$={handleInput}
+				onKeyDown$={handleKeydown}
+				rows={rows.value}
+				value={text.value}
+				class="block resize-none w-1/3 mx-auto max-h-[25vh] border"
+			/>
+			<footer>
+				<div class="h-[5vh]" />
+			</footer>
 		</div>
 	)
 })
