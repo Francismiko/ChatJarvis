@@ -24,8 +24,10 @@
 	"dependencies": {
 		"@builder.io/qwik": "latest",
 		"@builder.io/qwik-city": "latest",
+		"@langchain/community": "^0.0.56",
 		"@qwik-ui/headless": "latest",
 		"@unocss/reset": "latest",
+		"langchain": "^0.1.37",
 		"radash": "latest",
 		"vite-tsconfig-paths": "latest"
 	}
