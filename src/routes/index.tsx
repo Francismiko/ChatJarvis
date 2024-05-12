@@ -10,14 +10,18 @@ export default component$(() => {
 		if (!textareaRef.value) return
 		rows.value = textareaRef.value.value.split('\n').length
 		text.value = textareaRef.value.value
-		console.log(123)
 	})
 
 	const handleKeydown = $((event: KeyboardEvent) => {
 		if (event.key === 'Enter') {
-			if (isEmpty(trim(text.value, '\n ')) || !textareaRef.value) return
+			if (
+				isEmpty(trim(text.value, '\n ')) ||
+				!textareaRef.value ||
+				event.shiftKey
+			) {
+				return
+			}
 			event.preventDefault()
-			console.log(text.value)
 			text.value = ''
 			rows.value = 1
 		}
