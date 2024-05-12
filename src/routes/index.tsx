@@ -2,6 +2,7 @@ import { $, component$, useSignal, useStore } from '@builder.io/qwik'
 import { isEmpty, trim, uid } from 'radash'
 import { ChatOllama } from '@langchain/community/chat_models/ollama'
 import { StringOutputParser } from '@langchain/core/output_parsers'
+import { perf } from '@/utils/performance'
 
 export default component$(() => {
 	const messages = useStore<string[]>([])
@@ -26,10 +27,13 @@ export default component$(() => {
 			}
 			event.preventDefault()
 
-			const chatModel = new ChatOllama({
-				model: 'qwen:0.5b',
-				temperature: 1,
-			})
+			const chatModel = perf<ChatOllama>(
+				() =>
+					new ChatOllama({
+						model: 'qwen:0.5b',
+						temperature: 1,
+					}),
+			)
 			const outputParser = new StringOutputParser()
 			const chain = chatModel.pipe(outputParser)
 			const stream = chain.stream(text.value)
